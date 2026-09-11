@@ -1,10 +1,19 @@
 models:
   - name: stg_nations
+    description: Table for nation's data
     columns:
       - name: nation_id
+        description: primary key for this table
         data_tests:
           - unique
           - not_null
+      - name: region_id
+        description: foreign key for this table
+        data_tests:
+          - relationships:
+              arguments: 
+                to: ref('stg_region')
+                field: region_id
   - name: stg_region
     columns:
       - name: name
@@ -16,6 +25,7 @@ models:
                 store_failures: TRUE
 
   - name: stg_orders
+    description: Order Information Table
     columns:
       - name: total_price
         data_tests:
