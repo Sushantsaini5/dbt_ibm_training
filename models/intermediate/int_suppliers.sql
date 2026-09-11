@@ -4,7 +4,7 @@ incremental_predicates = ['DBT_INTERNAL_SOURCE.account_balance > 9900']) }}
 with supplier as (
     select s.supplier_id, n.Sname, s.* exclude (supplier_id, supplier_name)
     from {{ ref('stg_suppliers') }}  s
-    join dbt_sushant.supplier_names n on s.supplier_id=n.skey
+    join {{ref('supplier_names')}} n on s.supplier_id=n.skey
 
     {% if is_incremental() %}
     where updated_time > (select max(updated_time) from {{ this }})
