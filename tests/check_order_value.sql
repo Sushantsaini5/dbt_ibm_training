@@ -1,1 +1,1 @@
-select order_id, total_price from {{ref('stg_orders')}} where (total_price <= 880)
+select order_id, total_price from {{ref('stg_orders')}} where (total_price <= 850)
