@@ -6,6 +6,7 @@ sources:
       - name: regions 
       - name: suppliers
       - name: nations 
+      - name: lineitems
       - name: customers
       - name: orders
         config:
