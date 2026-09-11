@@ -1,7 +1,7 @@
 {{ config(transient=false) }}
 with orders as (
         select * from {{ ref('stg_orders') }}
-        where order_id<=100000
+        where order_id <= 100000
          )
 
 select 
