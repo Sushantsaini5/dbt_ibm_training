@@ -1,0 +1,13 @@
+my_new_project:
+  outputs:
+    dev:
+      account: {{ env_var('SNOWFLAKE_ACCOUNT')}}
+      database: ANALYTICS
+      password: {{ env_var('SNOWFLAKE_PASSWORD')}}
+      role: AnalyticsEngineer
+      schema: DBT_CORE_SS
+      threads: 3
+      type: snowflake
+      user: {{ env_var('SNOWFLAKE_USER')}}
+      warehouse: TRANSFORM_WH
+  target: dev
